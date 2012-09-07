@@ -180,7 +180,7 @@ class SonataMediaExtension extends Extension
                 'persist',
             ),
             'mappedBy'      => 'media',
-            'orphanRemoval' => false,
+            'orphanRemoval' => true,
         ));
 
         $collector->addAssociation($config['class']['gallery_has_media'], 'mapManyToOne', array(
@@ -195,6 +195,8 @@ class SonataMediaExtension extends Extension
                 array(
                     'name'  => 'gallery_id',
                     'referencedColumnName' => 'id',
+                    'onDelete' => 'cascade',
+                    'onUpdate' => 'cascade',
                 ),
             ),
             'orphanRemoval' => false,
@@ -212,6 +214,8 @@ class SonataMediaExtension extends Extension
                 array(
                     'name'  => 'media_id',
                     'referencedColumnName' => 'id',
+                    'onDelete' => 'cascade',
+                    'onUpdate' => 'cascade',
                 ),
             ),
             'orphanRemoval' => false,
