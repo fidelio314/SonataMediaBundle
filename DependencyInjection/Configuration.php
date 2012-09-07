@@ -245,11 +245,12 @@ class Configuration implements ConfigurationInterface
                                 ->scalarNode('adapter')->defaultValue('sonata.media.adapter.image.gd')->end()
                                 ->arrayNode('allowed_extensions')
                                     ->prototype('scalar')->end()
-                                    ->defaultValue(array('jpg', 'png'))
+                                    ->defaultValue(array('gif', 'jpg', 'png'))
                                 ->end()
                                 ->arrayNode('allowed_mime_types')
                                     ->prototype('scalar')->end()
                                     ->defaultValue(array(
+                                        'image/gif',
                                         'image/pjpeg',
                                         'image/jpeg',
                                         'image/png',
